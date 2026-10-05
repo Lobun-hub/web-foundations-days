@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Notes</title>
+		<link rel="stylesheet" href="style.css">
+		<script src="script.js" defer></script>
+	</head>
+	<body>
+		<main class="app-shell">
+			<header class="page-header">
+				<h1>Notes</h1>
+				<button id="theme-toggle" type="button">Dark mode</button>
+			</header>
+			<section class="note-editor" aria-label="Note editor">
+				<label for="note-text">Your note</label>
+				<textarea id="note-text" placeholder="Start writing..."></textarea>
+				<div class="editor-footer">
+					<div class="counts">
+						<p id="char-count" aria-live="polite">0 / 200 characters</p>
+						<p id="word-count" aria-live="polite">0 words</p>
+					</div>
+					<button id="clear-btn" type="button">Clear</button>
+				</div>
+			</section>
+		</main>
+	</body>
+</html>

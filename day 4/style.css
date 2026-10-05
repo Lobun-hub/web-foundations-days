@@ -1,0 +1,162 @@
+:root {
+	color-scheme: light;
+	--page-bg: #f2f6f2;
+	--surface: #ffffff;
+	--text: #1f302a;
+	--muted: #5d7067;
+	--border: #cbd8d0;
+	--accent: #176b56;
+	--accent-text: #ffffff;
+	--warning: #a34f00;
+	--over: #b42318;
+}
+
+body.dark {
+	color-scheme: dark;
+	--page-bg: #18221f;
+	--surface: #222e2a;
+	--text: #e8f0eb;
+	--muted: #afc0b6;
+	--border: #46574e;
+	--accent: #75d6ad;
+	--accent-text: #10251d;
+	--warning: #ffbd73;
+	--over: #ff8982;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	margin: 0;
+	background: var(--page-bg);
+	color: var(--text);
+	font-family: "Trebuchet MS", sans-serif;
+	transition: background-color 180ms ease, color 180ms ease;
+}
+
+button,
+textarea {
+	font: inherit;
+}
+
+.app-shell {
+	width: min(100% - 2rem, 760px);
+	margin: 0 auto;
+	padding: 3rem 0;
+}
+
+.page-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	margin-bottom: 1.5rem;
+}
+
+h1 {
+	margin: 0;
+	font-family: Georgia, serif;
+	font-size: 2rem;
+	font-weight: 500;
+}
+
+.note-editor {
+	padding: 1.5rem;
+	border: 1px solid var(--border);
+	border-radius: 8px;
+	background: var(--surface);
+}
+
+label {
+	display: block;
+	margin-bottom: 0.75rem;
+	font-weight: 700;
+}
+
+textarea {
+	display: block;
+	width: 100%;
+	min-height: 16rem;
+	padding: 1rem;
+	border: 1px solid var(--border);
+	border-radius: 6px;
+	background: var(--page-bg);
+	color: var(--text);
+	line-height: 1.6;
+	resize: vertical;
+}
+
+textarea:focus-visible,
+button:focus-visible {
+	outline: 3px solid var(--accent);
+	outline-offset: 3px;
+}
+
+.editor-footer,
+.counts {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+}
+
+.editor-footer {
+	margin-top: 1rem;
+}
+
+.counts {
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	gap: 0.5rem 1.25rem;
+}
+
+.counts p {
+	margin: 0;
+	color: var(--muted);
+	font-size: 0.9rem;
+}
+
+.counts p.warning {
+	color: var(--warning);
+}
+
+.counts p.over {
+	color: var(--over);
+	font-weight: 700;
+}
+
+button {
+	min-height: 2.75rem;
+	padding: 0.65rem 1rem;
+	border: 1px solid var(--accent);
+	border-radius: 6px;
+	background: var(--accent);
+	color: var(--accent-text);
+	cursor: pointer;
+}
+
+button:hover {
+	filter: brightness(0.94);
+}
+
+#theme-toggle {
+	background: transparent;
+	color: var(--text);
+}
+
+@media (max-width: 520px) {
+	.app-shell {
+		padding: 1.5rem 0;
+	}
+
+	.note-editor {
+		padding: 1rem;
+	}
+
+	.editor-footer {
+		align-items: flex-end;
+	}
+}
